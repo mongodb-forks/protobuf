@@ -91,11 +91,11 @@ load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
 
 kt_register_toolchains()
 
-load("@rules_ruby//ruby:defs.bzl", "ruby_runtime")
+# load("@rules_ruby//ruby:defs.bzl", "ruby_runtime")
 
-ruby_runtime("system_ruby")
+# ruby_runtime("system_ruby")
 
-register_toolchains("@system_ruby//:toolchain")
+# register_toolchains("@system_ruby//:toolchain")
 
 # Uncomment pairs of ruby_runtime() + register_toolchain() calls below to enable
 # local JRuby testing. Do not submit the changes (due to impact on test duration
@@ -108,13 +108,13 @@ register_toolchains("@system_ruby//:toolchain")
 #
 #register_toolchains("@jruby-9.3//:toolchain")
 
-load("@system_ruby//:bundle.bzl", "ruby_bundle")
+# load("@system_ruby//:bundle.bzl", "ruby_bundle")
 
-ruby_bundle(
-    name = "protobuf_bundle",
-    srcs = ["//ruby:google-protobuf.gemspec"],
-    gemfile = "//ruby:Gemfile",
-)
+# ruby_bundle(
+#     name = "protobuf_bundle",
+#     srcs = ["//ruby:google-protobuf.gemspec"],
+#     gemfile = "//ruby:Gemfile",
+# )
 
 http_archive(
     name = "lua",
